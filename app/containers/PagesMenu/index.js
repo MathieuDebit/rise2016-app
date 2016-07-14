@@ -8,12 +8,12 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import styles from './styles.css';
-import iconBriefing from './img/briefing.svg';
-import iconContact from './img/contact.svg';
-import iconActus from './img/actus.svg';
-import iconDebauche from './img/debauche.svg';
-import iconDepeche from './img/depeche.svg';
-import iconLive from './img/live.svg';
+import iconBriefing from './img/briefing.png';
+import iconContact from './img/contact.png';
+import iconActus from './img/actus.png';
+import iconDebauche from './img/debauche.png';
+import iconDepeche from './img/depeche.png';
+import iconLive from './img/live.png';
 
 class PagesMenu extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
