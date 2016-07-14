@@ -4,6 +4,15 @@
  * App container styles
  */
 
+body {
+  font-family: Roboto, sans-serif;
+}
+
 .container {
   display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #FFCF63;
 }

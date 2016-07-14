@@ -8,6 +8,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import styles from './styles.css';
+import logo from './img/logo@2x.png';
 
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -15,7 +16,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
       <div className={styles.header}>
         <Link className={styles.content} to={'/'}>
           <div className={styles.logo}>
-            <img src="/img/logo.png" alt="" />
+            <img src={logo} alt="" />
           </div>
         </Link>
         <div className={styles.menu}></div>
