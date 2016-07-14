@@ -34,6 +34,50 @@ export default function createRoutes() {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/program',
+      getComponent: function get(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('containers/Program').default);
+        }, 'Program');
+      },
+    }, {
+      path: '/live',
+      getComponent: function get(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('containers/Live').default);
+        }, 'Live');
+      },
+    }, {
+      path: '/morning',
+      getComponent: function get(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('containers/Morning').default);
+        }, 'Morning');
+      },
+    }, {
+      path: '/evening',
+      getComponent: function get(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('containers/Evening').default);
+        }, 'Evening');
+      },
+    }, {
+      path: '/news',
+      getComponent: function get(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('containers/News').default);
+        }, 'News');
+      },
+    }, {
+      path: '/contact',
+      getComponent: function get(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('containers/Contact').default);
+        }, 'Contact');
+      },
+    },
+
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

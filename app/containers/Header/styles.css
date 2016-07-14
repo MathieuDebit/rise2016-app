@@ -1,0 +1,35 @@
+.header {
+  height: 64px;
+  background: #FFF;
+  border-bottom: 1px solid #DADADA;
+  padding: 0 15px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.logo {
+  width: 66px;
+  height: 44px;
+}
+
+.logo img {
+  width: 66px;
+  height: 44px;
+}
+
+.menu {
+  display: none;
+}

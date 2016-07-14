@@ -1,0 +1,51 @@
+.container {
+  padding: 0 15px;
+}
+
+.article {
+  border-left: 1px solid #C3C3C3;
+  padding: 3px 0;
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+
+.program h1 {
+  margin: 15px 0;
+  font-size: 18px;
+  color: rgb(229, 169, 35);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.program h2 {
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.infos {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  font-weight: lighter;
+}
+
+.infos .place {
+  font-style: italic;
+  margin-top: 2px;
+}

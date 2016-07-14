@@ -10,12 +10,19 @@
  */
 
 import React from 'react';
+import Header from '../Header';
+import PagesMenu from '../PagesMenu';
+
+import styles from './styles.css';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     return (
-      <h1>This is the Homepage!</h1>
+      <div className={styles.HomePage}>
+        <Header />
+        <PagesMenu />
+      </div>
     );
   }
 }
