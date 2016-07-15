@@ -9,19 +9,6 @@
   margin-bottom: 15px;
 }
 
-.program h1 {
-  margin: 15px 0;
-  font-size: 18px;
-  color: rgb(229, 169, 35);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.program h2 {
-  line-height: 20px;
-  font-size: 16px;
-  font-weight: normal;
-}
 
 .infos {
   display: -webkit-flex;
