@@ -10,6 +10,7 @@ import BaseAPI from 'api/base.js';
 
 import Header from '../Header';
 import styles from './styles.css';
+import loader from '../App/img/loader.png';
 
 class Morning extends React.Component {
   constructor(props) {
@@ -49,7 +50,9 @@ class Morning extends React.Component {
 
           {
             this.state.isLoading &&
-              <p>loading...</p>
+              <header className={styles.loading}>
+                <img src={loader} alt="" />
+              </header>
           }
 
           {

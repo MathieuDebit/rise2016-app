@@ -10,6 +10,8 @@ import localforage from 'localforage';
 import Header from '../Header';
 import NewsArticle from './NewsArticle.js';
 
+import loader from '../App/img/loader.png';
+
 import styles from './styles.css';
 
 class News extends React.Component {
@@ -55,7 +57,9 @@ class News extends React.Component {
 
           {
             this.state.isLoading &&
-              <p>loading...</p>
+              <header className={styles.loading}>
+                <img src={loader} alt="" />
+              </header>
           }
 
           {
