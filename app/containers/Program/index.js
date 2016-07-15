@@ -26,7 +26,9 @@ class Program extends React.Component {
   }
 
   init() {
-    this.setState({ isLoading: true });
+    localforage.getItem('programData').then((programData) => {
+      this.setState({ isLoading: true, data: programData });
+    });
 
     BaseAPI.getPost('1193').then((response) => {
       localforage.setItem('programData', response.data, () => {

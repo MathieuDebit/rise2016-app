@@ -27,7 +27,9 @@ class News extends React.Component {
   }
 
   init() {
-    this.setState({ isLoading: true });
+    localforage.getItem('posts').then((posts) => {
+      this.setState({ isLoading: true, posts });
+    });
 
     BaseAPI.getPosts()
       .then((response) => {
