@@ -2,32 +2,6 @@
   padding: 0 20px;
 }
 
-.evening h1 {
-  margin: 15px 0;
-  font-size: 18px;
-  color: rgb(229, 169, 35);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.evening h2 {
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  margin-top: 15px;
-}
-
-.evening h2::before {
-  content: '';
-  width: 50%;
-  height: 1px;
-  background: #C3C3C3;
-  display: block;
-  margin: 15px auto;
-}
-
 .text_infos {
   margin-top: 15px;
   text-align: center;

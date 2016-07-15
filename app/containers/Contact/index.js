@@ -15,11 +15,11 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
       <div className={styles.contact}>
         <Header />
         <div className={styles.container}>
-          <h1>
-            Contact
-          </h1>
+          <h2>
+            Contact us
+          </h2>
           <p>
-            Vous avez une question ? Un problème envoyez un mail ou appellez Inès ou Manon qui vous aideront !
+            Have any question ? A problem ? Send a mail or call Inès or Manon who help you!
           </p>
           <p>
             <Link className={styles.link} to={'mailto:participants@rise2016.eu'}>

@@ -22,7 +22,7 @@ class PagesMenu extends React.Component { // eslint-disable-line react/prefer-st
         <div className={styles.pageButton}>
           <Link className={styles.content} to={'/program'}>
             <img src={iconBriefing} alt="" />
-            <span>Briefing du jour</span>
+            <span>Briefing of the day</span>
           </Link>
         </div>
         <div className={styles.pageButton}>
@@ -46,13 +46,13 @@ class PagesMenu extends React.Component { // eslint-disable-line react/prefer-st
         <div className={styles.pageButton}>
           <Link className={styles.content} to={'/news'}>
             <img src={iconActus} alt="" />
-            <span>Actus</span>
+            <span>News</span>
           </Link>
         </div>
         <div className={styles.pageButton}>
           <Link className={styles.content} to={'/contact'}>
             <img src={iconContact} alt="" />
-            <span>Contact</span>
+            <span>Contact us</span>
           </Link>
         </div>
       </div>

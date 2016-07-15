@@ -43,15 +43,19 @@ class Evening extends React.Component {
       <div className={styles.evening}>
         <Header />
 
-        {
-          this.state.isLoading &&
-            <p>loading...</p>
-        }
+        <div className={styles.container}>
+          <h2>Evening</h2>
 
-        {
-          this.state.data &&
-            <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
-        }
+          {
+            this.state.isLoading &&
+              <p>loading...</p>
+          }
+
+          {
+            this.state.data &&
+              <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
+          }
+        </div>
       </div>
     );
   }

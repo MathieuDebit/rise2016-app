@@ -51,7 +51,7 @@ class News extends React.Component {
       <div className={styles.news}>
         <Header />
         <div className={styles.container}>
-          <h1>News</h1>
+          <h2 className={styles.headerTitle}>News</h2>
 
           {
             this.state.isLoading &&
