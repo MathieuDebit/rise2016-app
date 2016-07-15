@@ -30,9 +30,11 @@ class Morning extends React.Component {
       this.setState({ isLoading: true, data: morningArticle });
     });
 
-    BaseAPI.getPost('1193').then((response) => {
-      localforage.setItem('morningArticle', response.data, () => {
-        this.setState({ isLoading: false, data: response.data });
+    localforage.getItem('userLocale').then((locale) => {
+      BaseAPI.getPosts(locale, 'morning').then((response) => {
+        localforage.setItem('morningArticle', response.data.posts[0], () => {
+          this.setState({ isLoading: false, data: response.data.posts[0] });
+        });
       });
     });
   }
