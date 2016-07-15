@@ -22,10 +22,10 @@ class Program extends React.Component {
   }
 
   componentDidMount() {
-    this.loadProgram();
+    this.init();
   }
 
-  loadProgram() {
+  init() {
     this.setState({ isLoading: true });
 
     BaseAPI.getPost('1193').then((response) => {
