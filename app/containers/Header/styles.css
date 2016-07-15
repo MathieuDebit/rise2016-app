@@ -30,6 +30,9 @@
   height: 44px;
 }
 
-.menu {
-  display: none;
+.locale {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  text-align: right;
 }

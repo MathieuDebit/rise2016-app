@@ -31,17 +31,19 @@ class News extends React.Component {
       this.setState({ isLoading: true, posts });
     });
 
-    BaseAPI.getPosts()
-      .then((response) => {
-        localforage.setItem('posts', response.data.posts, () => {
-          this.setState({ isLoading: false, posts: response.data.posts });
-        });
-      })
-      .catch((error) => {
-        this.setState({ isLoading: false });
+    localforage.getItem('userLocale').then((locale) => {
+      BaseAPI.getPosts(locale, 'news')
+        .then((response) => {
+          localforage.setItem('posts', response.data.posts, () => {
+            this.setState({ isLoading: false, posts: response.data.posts });
+          });
+        })
+        .catch((error) => {
+          this.setState({ isLoading: false });
 
-        throw error;
-      });
+          throw error;
+        });
+    });
   }
 
   render() {

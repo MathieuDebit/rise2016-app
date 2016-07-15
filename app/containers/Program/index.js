@@ -30,9 +30,9 @@ class Program extends React.Component {
       this.setState({ isLoading: true, data: programData });
     });
 
-    BaseAPI.getPost('1193').then((response) => {
-      localforage.setItem('programData', response.data, () => {
-        this.setState({ isLoading: false, data: response.data });
+    BaseAPI.getPosts('fr-FR', 'breifing').then((response) => {
+      localforage.setItem('programData', response.data.posts[0], () => {
+        this.setState({ isLoading: false, data: response.data.posts[0] });
       });
     });
   }
@@ -48,7 +48,7 @@ class Program extends React.Component {
         }
 
         {
-          !this.state.isLoading && this.state.data !== null &&
+          this.state.data &&
             <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
         }
       </div>
