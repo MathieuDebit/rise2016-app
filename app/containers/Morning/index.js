@@ -15,7 +15,7 @@ class Morning extends React.Component { // eslint-disable-line react/prefer-stat
       <div className={styles.morning}>
         <Header />
         <div className={styles.container}>
-          <h2>
+          <h2 className={styles.headerTitle}>
             Morning
           </h2>
           <p>

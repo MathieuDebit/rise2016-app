@@ -42,7 +42,9 @@ class Program extends React.Component {
       <div className={styles.program}>
         <Header />
         <div className={styles.container}>
-          <h1>Briefing of the day</h1>
+          <h2 className={styles.headerTitle}>
+            Briefing of the day
+          </h2>
           {
             this.state.isLoading &&
               <p>loading...</p>

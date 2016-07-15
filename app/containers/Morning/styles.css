@@ -2,23 +2,6 @@
   padding: 0 20px;
 }
 
-.morning h2 {
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  margin-top: 15px;
-}
-
-h2::before {
-  content: '';
-  width: 50%;
-  height: 1px;
-  background: #C3C3C3;
-  display: block;
-  margin: 15px auto;
-}
 
 .meteo {
   width: 100%;

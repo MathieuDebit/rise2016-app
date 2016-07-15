@@ -19,7 +19,7 @@ a {
   color: #FFCF63;
 }
 
-h2 {
+h2:first-of-type {
   margin: 15px 0;
   font-size: 18px;
   color: rgb(229, 169, 35);
