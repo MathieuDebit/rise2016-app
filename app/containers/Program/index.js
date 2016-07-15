@@ -41,16 +41,18 @@ class Program extends React.Component {
     return (
       <div className={styles.program}>
         <Header />
+        <div className={styles.container}>
+          <h1>Briefing of the day</h1>
+          {
+            this.state.isLoading &&
+              <p>loading...</p>
+          }
 
-        {
-          this.state.isLoading &&
-            <p>loading...</p>
-        }
-
-        {
-          !this.state.isLoading && this.state.data !== null &&
-            <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
-        }
+          {
+            !this.state.isLoading && this.state.data !== null &&
+              <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
+          }
+        </div>
       </div>
     );
   }

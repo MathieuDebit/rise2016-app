@@ -14,7 +14,14 @@ class Evening extends React.Component { // eslint-disable-line react/prefer-stat
     return (
       <div className={styles.evening}>
         <Header />
-        Découvre un récapitulatif de la journée, le programme de la soirée
+        <div className={styles.container}>
+          <h2>
+            Evening
+          </h2>
+          <p>
+            Découvre un récapitulatif de la journée, le programme de la soirée
+          </p>
+        </div>
       </div>
     );
   }

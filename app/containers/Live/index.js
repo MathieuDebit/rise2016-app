@@ -14,7 +14,14 @@ class Live extends React.Component { // eslint-disable-line react/prefer-statele
     return (
       <div className={styles.live}>
         <Header />
-        Be ready ! Reste connecté pour voir les lives de la session !
+        <div className={styles.container}>
+          <h2>
+            Live4
+          </h2>
+          <p>
+            Be ready ! Reste connecté pour voir les lives de la session !
+          </p>
+        </div>
       </div>
     );
   }

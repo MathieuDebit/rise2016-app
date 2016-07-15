@@ -14,7 +14,14 @@ class Morning extends React.Component { // eslint-disable-line react/prefer-stat
     return (
       <div className={styles.morning}>
         <Header />
-        Commence bien ta journée avec de la musique, le repas et d'autres surprises !
+        <div className={styles.container}>
+          <h2>
+            Morning
+          </h2>
+          <p>
+            Commence bien ta journée avec de la musique, le repas et d'autres surprises !
+          </p>
+        </div>
       </div>
     );
   }
