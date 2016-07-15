@@ -14,7 +14,7 @@ const NewsArticle = (props) => {
   return (
     <article className={styles.article}>
       <div className={styles.img_wrapper}>
-        <img src={props.coverImage || 'http://placehold.it/290x120'} alt="Cover is not available" />
+        <img src={props.coverImage || 'http://placehold.it/290x120'} alt="post cover" />
       </div>
 
       <div className={styles.text}>
