@@ -33,9 +33,11 @@ class Program extends React.Component {
       this.setState({ isLoading: true, data: programData });
     });
 
-    BaseAPI.getPosts('fr-FR', 'breifing').then((response) => {
-      localforage.setItem('programData', response.data.posts[0], () => {
-        this.setState({ isLoading: false, data: response.data.posts[0] });
+    localforage.getItem('userLocale').then((locale) => {
+      BaseAPI.getPosts(locale, 'briefing').then((response) => {
+        localforage.setItem('programData', response.data.posts[0], () => {
+          this.setState({ isLoading: false, data: response.data.posts[0] });
+        });
       });
     });
   }

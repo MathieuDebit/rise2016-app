@@ -2,16 +2,12 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  animation: desappear .3s cubic-bezier(0, 1, 1, 1);
+  animation: desappear 0.3s cubic-bezier(0, 1, 1, 1);
   z-index: 100;
-  /*-webkit-transform: translateY(100px);
-  -ms-transform: translateY(100px);
-  -o-transform: translateY(100px);
-  transform: translateY(100px);*/
 }
 
 .goTop--visible {
-  animation: appear .3s cubic-bezier(0, 1, 1, 1);
+  animation: appear 0.3s cubic-bezier(0, 1, 1, 1);
 }
 
 @keyframes appear {
