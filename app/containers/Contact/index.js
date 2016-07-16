@@ -6,7 +6,6 @@
 
 import React from 'react';
 import Header from '../Header';
-import { Link } from 'react-router';
 import styles from './styles.css';
 
 class Contact extends React.Component { // eslint-disable-line react/prefer-stateless-function
