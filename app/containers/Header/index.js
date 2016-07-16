@@ -42,7 +42,6 @@ class Header extends React.Component {
   onLocaleChange(event) {
     localforage.setItem('userLocale', event.target.value).then((locale) => {
       this.setState({ locale });
-      window.location.reload();
     });
   }
 
