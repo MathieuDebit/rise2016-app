@@ -56,7 +56,7 @@ class Program extends React.Component {
           }
 
           {
-            !this.state.isLoading && this.state.data !== null &&
+            this.state.data &&
               <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
           }
         </div>
