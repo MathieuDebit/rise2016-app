@@ -9,6 +9,7 @@ import localforage from 'localforage';
 import BaseAPI from 'api/base.js';
 
 import Header from '../Header';
+import GoTop from '../../components/GoTop';
 import styles from './styles.css';
 import loader from '../App/img/loader.png';
 
@@ -43,6 +44,8 @@ class Evening extends React.Component {
     return (
       <div className={styles.evening}>
         <Header backButton />
+
+        <GoTop />
 
         <div className={styles.container}>
           <h2>Evening Dispatch</h2>
