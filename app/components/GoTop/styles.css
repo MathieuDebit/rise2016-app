@@ -3,10 +3,10 @@
   bottom: 20px;
   right: 20px;
   animation: desappear .3s cubic-bezier(0, 1, 1, 1);
-  -webkit-transform: translateY(100px);
+  /*-webkit-transform: translateY(100px);
   -ms-transform: translateY(100px);
   -o-transform: translateY(100px);
-  transform: translateY(100px);
+  transform: translateY(100px);*/
 }
 
 .goTop--visible {
