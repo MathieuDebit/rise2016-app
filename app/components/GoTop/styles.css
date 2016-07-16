@@ -1,0 +1,33 @@
+.goTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  animation: desappear .3s cubic-bezier(0, 1, 1, 1);
+  -webkit-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  transform: translateY(100px);
+}
+
+.goTop--visible {
+  animation: appear .3s cubic-bezier(0, 1, 1, 1);
+}
+
+@keyframes appear {
+  from {
+    -webkit-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.goTop img {
+  width: 50px;
+}
