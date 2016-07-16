@@ -13,7 +13,7 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
   render() {
     return (
       <div className={styles.contact}>
-        <Header />
+        <Header backButton />
         <div className={styles.container}>
           <h2>
             Contact us

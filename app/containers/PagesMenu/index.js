@@ -34,13 +34,13 @@ class PagesMenu extends React.Component { // eslint-disable-line react/prefer-st
         <div className={styles.pageButton}>
           <Link className={styles.content} to={'/morning'}>
             <img src={iconDepeche} alt="" />
-            <span>Dépeche du matin</span>
+            <span>Morning Dispatch</span>
           </Link>
         </div>
         <div className={styles.pageButton}>
           <Link className={styles.content} to={'/evening'}>
             <img src={iconDebauche} alt="" />
-            <span>Débauche du soir</span>
+            <span>Evening Dispatch</span>
           </Link>
         </div>
         <div className={styles.pageButton}>

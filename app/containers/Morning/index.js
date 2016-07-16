@@ -43,10 +43,10 @@ class Morning extends React.Component {
   render() {
     return (
       <div className={styles.morning}>
-        <Header />
+        <Header backButton />
 
         <div className={styles.container}>
-          <h2>Morning</h2>
+          <h2>Morning Dispatch</h2>
 
           {
             this.state.isLoading &&
