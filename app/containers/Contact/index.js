@@ -22,19 +22,19 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
             Have any question ? A problem ? Send a mail or call Inès or Manon who help you!
           </p>
           <p>
-            <Link className={styles.link} to={'mailto:participants@rise2016.eu'}>
+            <a className={styles.link} href="mailto:participants@rise2016.eu">
               participants@rise2016.eu
-            </Link>
+            </a>
           </p>
           <p>
-            Manon: <Link className={styles.link} to={'tel:+33 6 38 38 27 67'}>
+            Manon: <a className={styles.link} href="tel:+33 6 38 38 27 67">
               +33 6 38 38 27 67
-            </Link>
+            </a>
           </p>
           <p>
-            Inès: <Link className={styles.link} to={'tel:+33 6 43 44 84 46'}>
+            Inès: <a className={styles.link} href="tel:+33 6 43 44 84 46">
               +33 6 43 44 84 46
-            </Link>
+            </a>
           </p>
         </div>
       </div>
