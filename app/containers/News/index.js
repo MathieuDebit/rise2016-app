@@ -8,6 +8,7 @@ import React from 'react';
 import BaseAPI from 'api/base.js';
 import localforage from 'localforage';
 import Header from '../Header';
+import GoTop from '../../components/GoTop';
 import NewsArticle from './NewsArticle.js';
 
 import loader from '../App/img/loader.png';
@@ -52,6 +53,9 @@ class News extends React.Component {
     return (
       <div className={styles.news}>
         <Header backButton />
+
+        <GoTop />
+
         <div className={styles.container}>
           <h2 className={styles.headerTitle}>News</h2>
 

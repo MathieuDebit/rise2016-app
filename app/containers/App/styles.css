@@ -61,3 +61,7 @@ header img {
     transform: rotate(360deg);
   }
 }
+
+#header {
+  position: relative;
+}

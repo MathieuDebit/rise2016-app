@@ -10,6 +10,7 @@ import BaseAPI from 'api/base.js';
 
 import styles from './styles.css';
 import Header from '../Header';
+import GoTop from '../../components/GoTop';
 
 import loader from '../App/img/loader.png';
 
@@ -43,6 +44,8 @@ class Program extends React.Component {
     return (
       <div className={styles.program}>
         <Header backButton />
+
+        <GoTop />
 
         <div className={styles.container}>
           <h2 className={styles.headerTitle}>
