@@ -42,7 +42,7 @@ class Program extends React.Component {
   render() {
     return (
       <div className={styles.program}>
-        <Header />
+        <Header backButton />
 
         <div className={styles.container}>
           <h2 className={styles.headerTitle}>

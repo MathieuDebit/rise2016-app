@@ -42,10 +42,10 @@ class Evening extends React.Component {
   render() {
     return (
       <div className={styles.evening}>
-        <Header />
+        <Header backButton />
 
         <div className={styles.container}>
-          <h2>Evening</h2>
+          <h2>Evening Dispatch</h2>
 
           {
             this.state.isLoading &&

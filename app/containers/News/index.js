@@ -51,7 +51,7 @@ class News extends React.Component {
   render() {
     return (
       <div className={styles.news}>
-        <Header />
+        <Header backButton />
         <div className={styles.container}>
           <h2 className={styles.headerTitle}>News</h2>
 
