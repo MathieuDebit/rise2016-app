@@ -10,7 +10,7 @@ import localforage from 'localforage';
 
 import styles from './styles.css';
 import logo from './img/logo@2x.png';
-// import backButtonImg from './img/back-button.png';
+import goBack from './img/goback.png';
 
 class Header extends React.Component {
   static propTypes = {
@@ -49,17 +49,19 @@ class Header extends React.Component {
     return (
       <div className={styles.header}>
         <Link className={styles.content} to={'/'}>
-          <div className={styles.logo}>
-            { /*
+            {
               this.props.backButton &&
-                <img src= alt="" />
-            */ }
+                <div className={styles.goBack}>
+                  <img src={goBack} alt="" />
+                </div>
+            }
 
             {
               !this.props.backButton &&
-                <img src={logo} alt="" />
+                <div className={styles.logo}>
+                  <img src={logo} alt="" />
+                </div>
             }
-          </div>
         </Link>
 
         <div className={styles.locale}>
