@@ -9,6 +9,7 @@ import localforage from 'localforage';
 import BaseAPI from 'api/base.js';
 
 import styles from './styles.css';
+import AppStyles from 'containers/App/styles.css';
 import Header from '../Header';
 import GoTop from '../../components/GoTop';
 
@@ -21,12 +22,23 @@ class Program extends React.Component {
     this.state = {
       data: null,
       isLoading: false,
+      date: null,
     };
+
+    // this.getDate = this.getDate.bind(this);
   }
 
   componentDidMount() {
     this.init();
   }
+
+  // getDate(articleDate) {
+  //   localforage.getItem('userLocale').then((locale) => {
+  //     const date = new Date(articleDate).toLocaleString(locale);
+  //
+  //     this.setState({ date });
+  //   });
+  // }
 
   init() {
     localforage.getItem('programData').then((programData) => {
@@ -36,7 +48,9 @@ class Program extends React.Component {
     localforage.getItem('userLocale').then((locale) => {
       BaseAPI.getPosts(locale, 'briefing').then((response) => {
         localforage.setItem('programData', response.data.posts[0], () => {
-          this.setState({ isLoading: false, data: response.data.posts[0] });
+          const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
+
+          this.setState({ isLoading: false, data: response.data.posts[0], date });
         });
       });
     });
@@ -50,9 +64,6 @@ class Program extends React.Component {
         <GoTop />
 
         <div className={styles.container}>
-          <h2 className={styles.headerTitle}>
-            Briefing of the day
-          </h2>
           {
             this.state.isLoading &&
               <header className={styles.loading}>
@@ -62,7 +73,15 @@ class Program extends React.Component {
 
           {
             this.state.data &&
-              <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
+              <div>
+                <h2 className={styles.headerTitle}>
+                  {this.state.data.title}
+                </h2>
+
+                <div className={AppStyles.articleDate}>{this.state.date}</div>
+
+                <div dangerouslySetInnerHTML={{ __html: this.state.data.content }} />
+              </div>
           }
         </div>
       </div>
