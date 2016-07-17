@@ -22,7 +22,7 @@ class Program extends React.Component {
     this.state = {
       data: null,
       isLoading: false,
-      date: null,
+      date: '',
     };
 
     // this.getDate = this.getDate.bind(this);
@@ -46,13 +46,19 @@ class Program extends React.Component {
     });
 
     localforage.getItem('userLocale').then((locale) => {
-      BaseAPI.getPosts(locale, 'briefing').then((response) => {
-        localforage.setItem('programData', response.data.posts[0], () => {
-          const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
+      BaseAPI.getPosts(locale, 'briefing')
+        .then((response) => {
+          localforage.setItem('programData', response.data.posts[0], () => {
+            if (response.data.posts[0]) {
+              const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
 
-          this.setState({ isLoading: false, data: response.data.posts[0], date });
+              this.setState({ isLoading: false, data: response.data.posts[0], date });
+            }
+          });
+        })
+        .catch(() => {
+          this.setState({ isLoading: false });
         });
-      });
     });
   }
 

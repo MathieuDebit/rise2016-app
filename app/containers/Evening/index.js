@@ -21,6 +21,7 @@ class Evening extends React.Component {
     this.state = {
       data: null,
       isLoading: false,
+      hasError: false,
       date: null,
     };
   }
@@ -35,13 +36,23 @@ class Evening extends React.Component {
     });
 
     localforage.getItem('userLocale').then((locale) => {
-      BaseAPI.getPosts(locale, 'evening').then((response) => {
-        localforage.setItem('eveningArticle', response.data.posts[0], () => {
-          const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
+      BaseAPI.getPosts(locale, 'evening')
+        .then((response) => {
+          const posts = response.data.posts;
 
-          this.setState({ isLoading: false, data: response.data.posts[0], date });
+          if (posts[0]) {
+            return localforage.setItem('eveningArticle', posts[0], () => {
+              const date = new Date(posts[0].modified).toLocaleString(locale);
+
+              this.setState({ isLoading: false, data: posts[0], date });
+            });
+          }
+
+          return this.setState({ isLoading: false, hasError: true });
+        })
+        .catch(() => {
+          this.setState({ isLoading: false });
         });
-      });
     });
   }
 
@@ -58,6 +69,11 @@ class Evening extends React.Component {
               <header className={styles.loading}>
                 <img src={loader} alt="" />
               </header>
+          }
+
+          {
+            this.state.hasError &&
+              <p>Nothing here...</p>
           }
 
           {

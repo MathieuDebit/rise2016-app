@@ -6,7 +6,7 @@ const BaseAPI = {
   getPost: (postId) => axios.get(`${ApiUrl}/posts/${postId}`),
 
   getPosts: (locale, category) =>
-    axios.get(`${ApiUrl}/posts?number=10&tag=${locale},${category}`),
+    axios.get(`${ApiUrl}/posts?number=10&category=${category}-${locale}`),
 
   getLastPost: () => axios.get(`${ApiUrl}/posts?number=1`),
 

@@ -5,7 +5,7 @@
 */
 
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import localforage from 'localforage';
 
 import styles from './styles.css';
@@ -36,12 +36,20 @@ class Header extends React.Component {
       if (locale !== null) {
         this.setState({ locale });
       }
+
+      localforage.setItem('userLocale', this.state.locale);
     });
+
+    // browserHistory.listen((route) => {
+    //   this.setState({ currentRoute: route.pathname });
+    // });
   }
 
   onLocaleChange(event) {
     localforage.setItem('userLocale', event.target.value).then((locale) => {
       this.setState({ locale });
+
+      browserHistory.push('/');
     });
   }
 

@@ -35,13 +35,17 @@ class Morning extends React.Component {
     });
 
     localforage.getItem('userLocale').then((locale) => {
-      BaseAPI.getPosts(locale, 'morning').then((response) => {
-        localforage.setItem('morningArticle', response.data.posts[0], () => {
-          const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
+      BaseAPI.getPosts(locale, 'morning')
+        .then((response) => {
+          localforage.setItem('morningArticle', response.data.posts[0], () => {
+            const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
 
-          this.setState({ isLoading: false, data: response.data.posts[0], date });
+            this.setState({ isLoading: false, data: response.data.posts[0], date });
+          })
+          .catch(() => {
+            this.setState({ isLoading: false });
+          });
         });
-      });
     });
   }
 
