@@ -28,13 +28,13 @@ h2:first-of-type {
   letter-spacing: 2px;
 }
 
-header {
+.loading {
   width: 100%;
   text-align: center;
   margin: 30px 0;
 }
 
-header img {
+.loading img {
   width: 30px;
   -webkit-animation: spin 1s infinite linear;
   animation: spin 1s infinite linear;

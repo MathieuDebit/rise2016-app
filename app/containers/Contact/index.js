@@ -18,7 +18,7 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
             Contact us
           </h2>
           <p>
-            Have any question ? A problem ? Send a mail or call Inès or Manon who help you!
+            Have any question? A problem? Send a mail or call Inès or Manon who will help you!
           </p>
           <p>
             <a className={styles.link} href="mailto:participants@rise2016.eu">
@@ -35,7 +35,16 @@ class Contact extends React.Component { // eslint-disable-line react/prefer-stat
               +33 6 43 44 84 46
             </a>
           </p>
+
+          <br /><br /><br />
+
+          <i>
+            Report a bug: <a className={styles.link} href="mailto:communication@rise2016.eu">
+            communication@rise2016.eu
+            </a>
+          </i>
         </div>
+
       </div>
     );
   }

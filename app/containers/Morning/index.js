@@ -66,9 +66,9 @@ class Morning extends React.Component {
         <div className={styles.container}>
           {
             this.state.isLoading &&
-              <header className={styles.loading}>
+              <div className={AppStyles.loading}>
                 <img src={loader} alt="" />
-              </header>
+              </div>
           }
 
           {

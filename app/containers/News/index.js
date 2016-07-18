@@ -14,6 +14,7 @@ import NewsArticle from './NewsArticle.js';
 import loader from '../App/img/loader.png';
 
 import styles from './styles.css';
+import AppStyles from 'containers/App/styles.css';
 
 class News extends React.Component {
   constructor(props) {
@@ -58,9 +59,9 @@ class News extends React.Component {
 
         {
           this.state.isLoading &&
-            <header className={styles.loading}>
+            <div className={AppStyles.loading}>
               <img src={loader} alt="" />
-            </header>
+            </div>
         }
 
         <div className={styles.container}>
