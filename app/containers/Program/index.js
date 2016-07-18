@@ -22,6 +22,7 @@ class Program extends React.Component {
     this.state = {
       data: null,
       isLoading: false,
+      hasError: false,
       date: '',
     };
 
@@ -48,16 +49,22 @@ class Program extends React.Component {
     localforage.getItem('userLocale').then((locale) => {
       BaseAPI.getPosts(locale, 'briefing')
         .then((response) => {
-          localforage.setItem('programData', response.data.posts[0], () => {
-            if (response.data.posts[0]) {
-              const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
+          const posts = response.data.posts;
 
-              this.setState({ isLoading: false, data: response.data.posts[0], date });
-            }
-          });
+          if (posts[0]) {
+            return localforage.setItem('programData', posts[0], () => {
+              if (posts[0]) {
+                const date = new Date(posts[0].modified).toLocaleString(locale);
+
+                this.setState({ isLoading: false, data: posts[0], date });
+              }
+            });
+          }
+
+          return this.setState({ isLoading: false, hasError: true });
         })
         .catch(() => {
-          this.setState({ isLoading: false });
+          this.setState({ isLoading: false, hasError: true });
         });
     });
   }

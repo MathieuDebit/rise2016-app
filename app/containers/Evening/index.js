@@ -51,7 +51,7 @@ class Evening extends React.Component {
           return this.setState({ isLoading: false, hasError: true });
         })
         .catch(() => {
-          this.setState({ isLoading: false });
+          this.setState({ isLoading: false, hasError: true });
         });
     });
   }

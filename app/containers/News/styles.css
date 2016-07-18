@@ -15,8 +15,10 @@
 
 .img_wrapper {
   height: auto;
+  min-height: 120px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
+  background-color: #CCCCCC;
 }
 
 .img_wrapper img {

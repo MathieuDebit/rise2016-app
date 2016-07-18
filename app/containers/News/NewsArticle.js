@@ -38,13 +38,20 @@ class NewsArticle extends React.Component {
     return (
       <article className={styles.article}>
         <div className={styles.img_wrapper}>
-          <img src={this.props.coverImage || 'http://placehold.it/290x120'} alt="post cover" />
+          {
+            this.props.coverImage &&
+              <img src={this.props.coverImage} alt="post cover" />
+          }
         </div>
 
         <div className={styles.text}>
           <a href="#" className={styles.title}>{this.props.title}</a>
           <p className={styles.date}>{this.state.date}</p>
-          <p className={styles.excerpt}>{this.props.excerpt}</p>
+          <div />
+          <p
+            className={styles.excerpt}
+            dangerouslySetInnerHTML={{ __html: this.props.excerpt }}
+          />
           <button className={styles.button}>
             <a href={this.props.articleUrl} target="_blank">Read More</a>
           </button>

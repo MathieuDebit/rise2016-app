@@ -21,6 +21,7 @@ class Morning extends React.Component {
     this.state = {
       data: null,
       isLoading: false,
+      hasError: false,
       date: null,
     };
   }
@@ -37,14 +38,20 @@ class Morning extends React.Component {
     localforage.getItem('userLocale').then((locale) => {
       BaseAPI.getPosts(locale, 'morning')
         .then((response) => {
-          localforage.setItem('morningArticle', response.data.posts[0], () => {
-            const date = new Date(response.data.posts[0].modified).toLocaleString(locale);
+          const posts = response.data.posts;
 
-            this.setState({ isLoading: false, data: response.data.posts[0], date });
-          })
-          .catch(() => {
-            this.setState({ isLoading: false });
-          });
+          if (posts[0]) {
+            return localforage.setItem('morningArticle', posts[0], () => {
+              const date = new Date(posts[0].modified).toLocaleString(locale);
+
+              this.setState({ isLoading: false, data: posts[0], date });
+            });
+          }
+
+          return this.setState({ isLoading: false, hasError: true });
+        })
+        .catch(() => {
+          this.setState({ isLoading: false, hasError: true });
         });
     });
   }

@@ -56,15 +56,15 @@ class News extends React.Component {
 
         <GoTop />
 
+        {
+          this.state.isLoading &&
+            <header className={styles.loading}>
+              <img src={loader} alt="" />
+            </header>
+        }
+
         <div className={styles.container}>
           <h2 className={styles.headerTitle}>News</h2>
-
-          {
-            this.state.isLoading &&
-              <header className={styles.loading}>
-                <img src={loader} alt="" />
-              </header>
-          }
 
           {
             this.state.posts &&
